@@ -1,0 +1,17 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+   
+
+    <!-- init data -->
+    <include file="config/liquibase/changelog/0000_init.xml" relativeToChangelogFile="false" />
+
+    <!-- user -->
+    <include file="config/liquibase/changelog/create_entity_user.xml" relativeToChangelogFile="false" />
+
+    <!-- card look up -->
+    <include file="config/liquibase/changelog/create_entity_card_lookup.xml" relativeToChangelogFile="false" />
+</databaseChangeLog>

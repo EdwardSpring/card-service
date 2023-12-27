@@ -1,0 +1,36 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+   
+    <property name="table" value="card_lookup" global="false"/>
+
+    <changeSet id="add_entity_${table}" author="${author}">
+
+        <preConditions onFail="MARK_RAN" onFailMessage="Table '${table}' already exists!">
+            <not>
+                <tableExists tableName="${table}"/>
+            </not>
+        </preConditions>
+
+
+        <createTable tableName="${table}">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="num" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+
+            <!-- Audit column -->
+            <column name="created_date" type="timestamp" defaultValue="${now}" />
+            <!--  -->
+        </createTable>
+
+    </changeSet>
+
+
+</databaseChangeLog>
