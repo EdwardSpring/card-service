@@ -33,3 +33,4 @@ build/
 .vscode/
 
 boot
+.DS_Store
