@@ -17,3 +17,8 @@ export TOKEN_HEADER="Authorization"
 export TOKEN_PREFIX="Bearer "
 mvn spring-boot:run
 ```
+## DOCKER
+if you've got docker installed, you can easily fire it up running 
+```
+docker-compose up
+```
